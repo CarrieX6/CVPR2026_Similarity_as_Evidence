@@ -13,7 +13,7 @@ This repository implements the core **SaE active-learning pipeline**:
 
 ## What is `sae_ca`?
 
-`METHOD: "sae_ca"` means **SaE + Class-Aware balanced query**, not the TPAMI extension **CEAH** (Class-Aware Evidence Head).
+`METHOD: "sae_ca"` means **SaE + Class-Aware balanced query**.
 
 | Component | Conference SaE (`sae_ca`) | TPAMI extension (not in this repo) |
 |-----------|---------------------------|-------------------------------------|
@@ -22,7 +22,7 @@ This repository implements the core **SaE active-learning pipeline**:
 | Acquisition score | `wv·vac + wd·dis` | LT-SaE buckets / LA / quotas |
 | Balanced selection | pseudo-label class buckets | same + tail modules |
 
-So **`sae_ca` is vector-level (sample-wise) total evidence estimation**, combined with **class-aware balanced sampling** in the query step — **not** class-aware evidential aggregation at inference.
+So **`sae_ca` is vector-level (sample-wise) total evidence estimation**, combined with **class-aware balanced sampling** in the query step.
 
 ## Repository Layout
 
@@ -94,7 +94,6 @@ Acquisition weights `wv`, `wd` are scheduled by AL round inside `MEH_Selector` (
 
 ## Notes
 
-- Adapter (`FRZ_RESIDUAL_ADAPTER`), LT-SaE, CEAH, and alignment-logging code are **removed** from this release.
 - BiomedCLIP and medical datasets have separate licenses; check upstream terms before redistribution.
 
 ## Acknowledgements
