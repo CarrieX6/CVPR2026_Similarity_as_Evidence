@@ -1,0 +1,50 @@
+{
+    "covid lungs": [
+        "The image displays bilateral, peripheral ground-glass opacities (GGOs), a hallmark finding in COVID-19 pneumonia.",
+        "A 'crazy-paving' pattern is visible, characterized by ground-glass opacities with superimposed interlobular septal thickening.",
+        "The scan shows multifocal opacities with a posterior and lower-lobe predominance, consistent with COVID-19.",
+        "Consolidative opacities are seen in the lung periphery, often with an associated air bronchogram.",
+        "The image reveals rounded or nodular ground-glass opacities, a common morphological presentation of COVID-19.",
+        "A 'reverse halo' sign or atoll sign is present, which appears as a central ground-glass opacity surrounded by a denser ring of consolidation.",
+        "The image demonstrates vascular thickening and enlargement within the areas of lung opacity.",
+        "In later stages, fibrotic changes such as traction bronchiectasis and architectural distortion are visible.",
+        "The scan is notable for the relative absence of pleural effusion, which is uncommon in early COVID-19.",
+        "The distribution of opacities is subpleural and bilateral, sparing the immediate tissue around the bronchi."
+    ],
+    "lung opacity lungs": [
+        "The image shows a focal lung opacity, appearing as a localized area of increased radiodensity within the lung parenchyma.",
+        "A diffuse opacity is visible, characterized by widespread, poorly defined increased attenuation throughout the lungs.",
+        "The chest radiograph reveals a well-defined nodular opacity, suggestive of a solitary pulmonary nodule.",
+        "The scan demonstrates an area of consolidation, which is an opacity that obscures the underlying bronchial and vascular markings.",
+        "A linear opacity is present, which could be consistent with atelectasis, scarring, or a fibrotic band.",
+        "The image displays a reticular opacity, composed of a network of fine lines, indicating interstitial lung disease.",
+        "A cavitary opacity is visible, showing a lucent center within a consolidative mass, suggesting necrosis.",
+        "The opacity has an 'air bronchogram' sign, where air-filled bronchi are visible against the opaque lung.",
+        "This photo shows a patchy opacity, indicating an airspace disease process with incomplete filling of the alveoli.",
+        "The image presents a ground-glass opacity (GGO), a hazy increase in lung density that does not obscure the underlying vessels."
+    ],
+    "normal lungs": [
+        "The image shows clear and well-aerated lung fields, with no evidence of focal or diffuse opacities.",
+        "Normal pulmonary vascular markings are visible, branching appropriately from the hila towards the lung periphery.",
+        "The chest radiograph displays sharp and distinct costophrenic angles and hemidiaphragmatic contours.",
+        "In this scan, the lung parenchyma is free of any nodules, masses, or areas of abnormal consolidation.",
+        "The trachea and main bronchi are centrally located and appear patent, consistent with a normal study.",
+        "The cardiac silhouette and mediastinal contours are of normal size and shape for the patient's age and build.",
+        "No signs of pleural effusion or pneumothorax are visible in the pleural spaces.",
+        "The visualized bony structures, such as the ribs and clavicles, appear intact and without lesions.",
+        "Both hila are of normal size and density, without evidence of adenopathy or mass.",
+        "The image demonstrates a normal lung volume with no signs of hyperinflation or restrictive patterns."
+    ],
+    "viral pneumonia lungs": [
+        "The image demonstrates bilateral, diffuse interstitial opacities, a common radiographic pattern in viral pneumonia.",
+        "A diffuse reticular or reticulonodular pattern is visible throughout the lung fields, suggesting interstitial inflammation.",
+        "The scan shows widespread ground-glass opacities, consistent with acute viral pneumonitis.",
+        "Peribronchial cuffing, seen as thickening and indistinctness of the airway walls, is evident in this image.",
+        "Unlike typical bacterial pneumonia, this scan lacks focal lobar consolidation, instead showing diffuse, patchy involvement.",
+        "The image reveals small, ill-defined centrilobular nodules scattered throughout both lungs.",
+        "There is evidence of interstitial edema, characterized by fine septal lines (Kerley B lines) in the lung periphery.",
+        "The overall lung volumes appear normal or slightly hyperinflated, which can be a feature of viral infection.",
+        "The scan shows a 'tree-in-bud' pattern in some areas, indicating inflammation and fluid in the small airways.",
+        "Pleural effusions, if present, are typically small and bilateral, unlike the larger effusions sometimes seen in bacterial pneumonia."
+    ]
+}

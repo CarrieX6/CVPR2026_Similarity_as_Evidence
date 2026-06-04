@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "RETINA"
+TRAINER:
+  COOPAL:
+    ASPATH: "retina.json"

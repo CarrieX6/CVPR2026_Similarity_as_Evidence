@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "COVID_19"
+TRAINER:
+  COOPAL:
+    ASPATH: "covid_19.json"

@@ -1,0 +1,13 @@
+name: ra-sae
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.0.1
+  - torchvision=0.15.2
+  - cudatoolkit
+  - pip:
+      - -r requirements.txt

@@ -1,0 +1,21 @@
+# CVPR conference SaE: AL-VLM with round-scheduled wv*vacuity + wd*dissonance.
+TRAINER:
+  BIOMEDCOOP:
+    PREC: "fp32"
+  COOPAL:
+    query: 0.04
+    Totalrounds: 6
+    pcb_flag: "true"
+    METHOD: "sae_ca"
+    ACQ_NORM_MODE: "batch_minmax"
+    ACQ_SCORE_MODE: "legacy_wv_wd"
+    BALANCED_QUERY: true
+    BALANCED_QUERY_PSEUDO: true
+    BEST_ROUND_METRIC: "macro_f1"
+    MEH_VERSION: "v2"
+    MEH_LOSS_VERSION: "meh_loss_v2_alternative"
+    SAE_CA:
+      ENABLE: true
+      USE_KCENTER: false
+    EGSF:
+      ENABLE: false

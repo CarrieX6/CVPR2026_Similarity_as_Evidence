@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "DermaMNIST"
+TRAINER:
+  COOPAL:
+    ASPATH: "dermamnist.json"

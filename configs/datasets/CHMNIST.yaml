@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "CHMNIST"
+TRAINER:
+  COOPAL:
+    ASPATH: "chmnist.json"

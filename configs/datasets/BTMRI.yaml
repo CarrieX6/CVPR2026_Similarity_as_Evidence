@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "BTMRI"
+TRAINER:
+  COOPAL:
+    ASPATH: "btmri.json"

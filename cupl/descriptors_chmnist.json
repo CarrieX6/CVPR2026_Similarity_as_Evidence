@@ -1,0 +1,98 @@
+{
+    "adipose tissue": [
+        "The image shows adipose tissue, recognizable by its large, circular cells that appear empty or clear.",
+        "In the photo, fat cells are visible, each with a thin rim of cytoplasm and a flattened nucleus pushed to the side.",
+        "This tissue has a characteristic honeycomb or chicken-wire appearance due to the close packing of adipocytes.",
+        "This is a photo of adipose cells, which are distinguished by their large, ovoid shape and lack of internal staining.",
+        "The image displays lobules of fat, where large, empty-looking cells are grouped together.",
+        "The most prominent feature of the adipose tissue in this image is the large, single lipid droplet that occupies most of the cell volume.",
+        "The tissue sample contains adipocytes, which are large, white, and spherical structures under magnification.",
+        "This photo shows mature fat tissue, identified by its large, univacuolar cells arranged in clusters.",
+        "The scan highlights an area of adipose tissue, which appears as a collection of well-defined, non-staining circular profiles.",
+        "Visible in the image is fatty tissue, composed of large cells where the nucleus is barely visible at the cell's edge."
+    ],
+    "complex stroma": [
+        "The image displays a complex stroma, characterized by a dense and disorganized mixture of cells and fibrous tissue.",
+        "Visible in the photo is a desmoplastic or reactive stroma, with abundant spindle-shaped fibroblasts and thick collagen bundles.",
+        "This photo shows a highly cellular stroma, indicating a significant reaction, often associated with an invasive tumor.",
+        "The complex stroma in the image contains numerous small blood vessels and a prominent inflammatory cell infiltrate.",
+        "This tissue is identified as complex stroma due to its dense, pink-staining, fibrous appearance that separates and surrounds other tissue elements.",
+        "The scan highlights a disordered stromal environment with a high density of cells and extracellular matrix components.",
+        "In the photo, the stroma is complex and appears actively involved in a pathological process, unlike simple supportive tissue.",
+        "This is an image of a sclerotic stroma, a type of complex stroma that is densely packed with collagen.",
+        "The tissue shows a complex stromal reaction, with haphazardly arranged cells and fibers.",
+        "A key feature of the complex stroma in this image is the lack of the loose, delicate structure seen in normal connective tissue."
+    ],
+    "debris": [
+        "The image shows an area of debris, appearing as an unstructured, granular, and intensely pink-staining region.",
+        "Visible in the photo is necrotic debris, where cell outlines are lost, leaving behind only amorphous material and cellular fragments.",
+        "This is a photo of acellular debris, characterized by the absence of intact nuclei and recognizable cell shapes.",
+        "The scan highlights a region of tumor necrosis, which looks like a messy collection of 'ghost' cells and nuclear dust (karyorrhexis).",
+        "The tissue sample contains inflammatory debris, composed of dead cells, fibrin, and remnants of neutrophils.",
+        "In this image, the debris appears as a collection of irregular, eosinophilic (pink) material without a clear structure.",
+        "This photo captures cellular debris resulting from cell death (apoptosis or necrosis).",
+        "The area of debris in the image is notable for its lack of viable, staining nuclei.",
+        "The scan shows clumps of proteinaceous debris and remnants of broken cells.",
+        "This is an image of keratin debris, often seen as laminated, pink flakes in certain types of tumors."
+    ],
+    "empty background": [
+        "The image contains an area of empty background, which appears as a clear, white space where no tissue is present.",
+        "This photo includes a region corresponding to the empty glass slide, seen as a uniform and featureless background.",
+        "A portion of the image shows an empty lumen, which is the clear, open space inside a glandular or ductal structure.",
+        "The background of the slide is visible in this photo, appearing as a bright, evenly illuminated area devoid of any cells.",
+        "The photo shows the edge of the tissue section against a blank, empty background.",
+        "An artifactual space or crack in the tissue is visible, appearing as a clear, empty line in the image.",
+        "This is a photo of a region without any biological material, representing the empty background of the microscope slide.",
+        "The scan includes a large, featureless area that is the out-of-focus background of the slide.",
+        "An empty space is present in the image, likely due to tissue processing or the natural structure of the organ.",
+        "The image shows a section of clear, empty space used for slide calibration or as a reference point."
+    ],
+    "immune cells": [
+        "The image shows a dense infiltrate of immune cells, appearing as numerous small, round, and dark-staining nuclei.",
+        "Visible in the photo are lymphocytes, which are characterized by their scant cytoplasm and large, hyperchromatic (dark purple) nuclei.",
+        "This is a photo of a chronic inflammatory infiltrate, composed primarily of small, dark immune cells like lymphocytes and plasma cells.",
+        "The stromal tissue in the image is heavily populated by immune cells, seen as a diffuse collection of 'small blue dots'.",
+        "The scan highlights clusters of lymphocytes, which are small, round cells with very little visible cytoplasm.",
+        "In this photo, plasma cells are identifiable within the immune infiltrate by their eccentric 'clock-face' nuclei and more abundant cytoplasm.",
+        "The image displays a band-like infiltrate of immune cells at the interface between epithelium and stroma.",
+        "This is an image showing perivascular cuffing, where immune cells are clustered around a blood vessel.",
+        "The photo captures a lymphoid aggregate, which is a well-organized, dense collection of immune cells.",
+        "Neutrophils are visible in the image as immune cells with multi-lobed nuclei, indicating an acute inflammatory response."
+    ],
+    "normal mucosal glands": [
+        "The image displays normal mucosal glands, which are well-organized, circular, or tubular structures lined by a single layer of cells.",
+        "In this photo, the glands show an orderly 'back-to-back' arrangement with uniform, basally located nuclei.",
+        "Normal glands are visible, appearing as rounded structures with open central lumens and minimal intervening stroma.",
+        "This is a photo of healthy mucosal tissue, characterized by its regular and well-differentiated glandular architecture.",
+        "The epithelial cells lining the normal glands in the scan have a uniform size and shape, without nuclear atypia.",
+        "The image shows glands with clear cell polarity, where nuclei are at the base and mucin-filled cytoplasm is at the top.",
+        "This photo depicts regularly spaced crypts, which are the normal glandular structures in the intestinal mucosa.",
+        "The scan shows a preserved glandular architecture, a key feature of normal, non-cancerous mucosal tissue.",
+        "In the image, the normal glands are uniform in size and shape from one to the next.",
+        "A key feature of the normal glands in this photo is the absence of disorganized growth, crowding, or multiple cell layers."
+    ],
+    "simple stroma": [
+        "The image shows simple stroma, which is a loose and sparsely cellular connective tissue that supports epithelial structures.",
+        "Visible in the photo is a paucicellular stroma, composed mainly of delicate, pink-staining collagen fibers and a few scattered fibroblasts.",
+        "This is a photo of normal supportive tissue, appearing as a loose, fibrous network located between glands.",
+        "The stroma in this scan is simple and unremarkable, lacking the dense, reactive features of complex or desmoplastic stroma.",
+        "The tissue is supported by a simple stroma, which appears as a loose and sometimes edematous (swollen) connective framework.",
+        "This image displays simple stroma with thin, wavy collagen fibers and occasional spindle-shaped cells.",
+        "The photo shows a delicate, hypocellular stroma that serves as the normal framework for the organ.",
+        "In this scan, the simple stroma contains small, inconspicuous blood vessels and very few inflammatory cells.",
+        "This is an image of the lamina propria, a type of simple stroma found beneath mucosal epithelium.",
+        "The stroma appears simple and quiescent, consisting of a fine fibrillar matrix with widely spaced cells."
+    ],
+    "tumour epithelium": [
+        "The image shows tumour epithelium, characterized by disorganized, fused, or back-to-back glands with irregular shapes.",
+        "Visible in the photo are malignant epithelial cells with large, dark (hyperchromatic), and variably shaped (pleomorphic) nuclei.",
+        "This is a photo of a carcinoma, where the tumour epithelium forms solid sheets and invasive nests within the stroma.",
+        "The tumour cells in the scan show a high nuclear-to-cytoplasmic ratio and prominent, often red, nucleoli.",
+        "In this image, the normal glandular architecture is lost and replaced by a chaotic proliferation of atypical tumour epithelium.",
+        "The photo shows cribriform structures, where tumour epithelium forms sieve-like or punched-out glandular spaces.",
+        "A key feature of the tumour epithelium is the loss of cell polarity, with nuclei arranged haphazardly instead of at the base.",
+        "The scan highlights tumour cells with significant nuclear atypia, including irregular nuclear membranes and coarse chromatin.",
+        "Numerous mitotic figures, some of which are abnormal in shape, are visible within the tumour epithelium.",
+        "This is an image of infiltrating tumour epithelium, seen as single cells or small, irregular clusters invading the surrounding stroma."
+    ]
+}

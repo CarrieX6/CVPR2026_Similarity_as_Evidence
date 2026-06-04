@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "LungColon"
+TRAINER:
+  COOPAL:
+    ASPATH: "lungcolon.json"

@@ -1,0 +1,86 @@
+{
+    "melanocytic nevus": [
+        "The image shows a symmetrical, well-demarcated papule with a uniform brown pigmentation.",
+        "This is a photo of a melanocytic nevus with regular, smooth borders and a consistent color pattern throughout.",
+        "The lesion displays a homogenous pattern of pigmentation without abrupt edges or significant asymmetry.",
+        "On dermoscopy, a network of uniform, light-to-dark brown pigment lines is visible across the lesion.",
+        "The photo shows a small, round-to-oval macule with sharp borders, consistent with a junctional nevus.",
+        "A key feature of this benign lesion is its stable appearance, showing no significant changes in size, shape, or color over time.",
+        "The lesion presents with a cobblestone or globular pattern, composed of uniform brown globules.",
+        "This image depicts a compound nevus, which is a raised, dome-shaped, and evenly pigmented papule.",
+        "The pigmentation is centrally located and fades evenly towards the periphery of the lesion.",
+        "There is an absence of atypical features such as streaks, irregular dots, or a blue-white veil."
+    ],
+    "melanoma": [
+        "The image displays a lesion with marked asymmetry in both its shape and the distribution of its color.",
+        "A key feature of melanoma in this photo is the irregular, notched, or scalloped border.",
+        "The lesion exhibits significant color variegation, with shades of brown, black, red, and blue-white.",
+        "An atypical pigment network, characterized by thick, irregular lines and blotches, is visible on dermoscopy.",
+        "The photo shows a blue-white veil, which is an area of structureless, hazy pigmentation often associated with melanoma.",
+        "Irregular streaks or pseudopods are visible at the periphery of the lesion, suggesting radial growth.",
+        "The surface of this nodular lesion shows signs of ulceration, bleeding, or crusting.",
+        "This is an image of a lesion with eccentric, structureless areas of dark pigmentation, a high-risk feature.",
+        "The photo shows a 'regression' pattern, with scar-like white areas and pepper-like gray granules.",
+        "The lesion is larger than 6 millimeters in diameter and has shown recent changes, consistent with clinical suspicion for melanoma."
+    ],
+    "benign keratosis": [
+        "The image shows a lesion with a distinct 'stuck-on' appearance, sharply demarcated from the surrounding skin.",
+        "This is a photo of a benign keratosis with a waxy, verrucous (wart-like), and greasy surface texture.",
+        "The lesion displays multiple milia-like cysts, which appear as small, well-defined white-to-yellowish globules.",
+        "Comedo-like openings, visible as dark, keratin-filled plugs, are a characteristic feature in this photo.",
+        "The photo depicts a lesion with cerebriform (brain-like) fissures and ridges on its surface.",
+        "A 'fat finger' pattern is visible on dermoscopy, showing thick, finger-like projections.",
+        "The borders of the lesion are sharply defined, creating a clear boundary with the normal skin.",
+        "This image shows a seborrheic keratosis, which often has a varied brown to black color but a uniform underlying structure.",
+        "The lesion has a dry, crumbly surface that may flake off easily.",
+        "A characteristic feature is the presence of horn pseudocysts, which are larger, round, keratin-filled structures."
+    ],
+    "basal cell carcinoma": [
+        "The image shows a pearly or translucent papule with fine, arborizing telangiectasias visible on its surface.",
+        "This is a photo of a basal cell carcinoma with a rolled, raised border and a central area of ulceration or depression.",
+        "The lesion displays a classic 'rodent ulcer' appearance, with central erosion and a well-defined, pearly edge.",
+        "A key dermoscopic feature in this photo is the presence of shiny, white-to-red structureless areas.",
+        "The scan reveals blue-gray ovoid nests, a specific feature of pigmented basal cell carcinoma.",
+        "Large, blue-gray globules are scattered throughout the lesion in this image.",
+        "The photo shows superficial spreading basal cell carcinoma, appearing as a pink-to-red, scaly patch with a fine, threadlike border.",
+        "Leaf-like structures, which are brown-to-gray and shaped like leaves, are visible on dermoscopy.",
+        "The image displays spoke-wheel areas, characterized by radial lines meeting at a central axis.",
+        "There is evidence of surface erosion or crusting, which is a common finding in basal cell carcinoma."
+    ],
+    "vascular lesion": [
+        "The image shows a bright red to deep purple papule or nodule, consistent with a vascular lesion.",
+        "This is a photo of a lesion composed of well-defined, red, purple, or blue-black lacunae (lagoons).",
+        "The lesion is a cherry angioma, appearing as a small, dome-shaped, erythematous papule.",
+        "A key clinical feature is that the lesion would blanch (whiten) with the application of pressure, known as diascopy.",
+        "The photo depicts a 'spider angioma,' which has a central red punctum and fine vessels radiating outwards.",
+        "This image shows a pyogenic granuloma, a rapidly growing, friable red papule that often bleeds.",
+        "The lesion appears as a soft, compressible papule, indicating it is filled with blood.",
+        "On dermoscopy, there is an absence of a pigment network or other melanocytic features.",
+        "This is a photo of a port-wine stain, a flat, pink-to-purple patch present from birth.",
+        "The image reveals a hemangioma, characterized by a lobulated, 'strawberry-like' surface."
+    ],
+    "actinic keratosis": [
+        "The image shows a rough, scaly, erythematous patch on sun-damaged skin, characteristic of an actinic keratosis.",
+        "This is a photo of a lesion with a red base and an adherent, yellowish or white hyperkeratotic scale.",
+        "The lesion has a 'sandpaper-like' texture that is often more easily felt than visually prominent.",
+        "Dermoscopy reveals a 'strawberry pattern' with surrounding erythema and prominent, white-haloed follicular openings.",
+        "The photo shows a cutaneous horn, a cone-shaped keratinous growth, arising from an underlying actinic keratosis.",
+        "This lesion is located in a sun-exposed area, such as the face, scalp, or forearms.",
+        "The image displays a 'rosette' sign, seen as four white dots arranged in a clover-like pattern under polarized dermoscopy.",
+        "The surface scale is clearly visible, appearing as a white-to-yellow crust on a red background.",
+        "The lesion's borders are often indistinct, blending into the surrounding sun-damaged skin.",
+        "The photo depicts multiple, scattered, small, scaly macules, indicative of widespread actinic damage."
+    ],
+    "dermatofibroma": [
+        "The image shows a firm, skin-colored to brown papule, often with a slightly darker periphery.",
+        "A key diagnostic feature is the 'dimple sign' or 'Fitzpatrick's sign,' where lateral pressure causes central depression.",
+        "This is a photo of a lesion that feels like a firm, button-like nodule fixed to the overlying skin.",
+        "Dermoscopy of this dermatofibroma reveals a delicate, peripheral pigment network with a central white, scar-like patch.",
+        "The photo displays a lesion commonly found on the lower extremities, appearing as a small, hard bump under the skin.",
+        "The central area of the lesion is often hypopigmented or white and structureless.",
+        "This image shows a small nodule with a smooth surface and well-defined but not sharply demarcated borders.",
+        "A faint, patch-like pigmentation is visible surrounding the central fibrotic area.",
+        "The lesion is typically asymptomatic but may be tender or itchy upon palpation.",
+        "There is an absence of ulceration, scaling, or vascular structures within the lesion."
+    ]
+}

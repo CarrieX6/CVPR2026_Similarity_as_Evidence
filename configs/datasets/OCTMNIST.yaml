@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "OCTMNIST"
+TRAINER:
+  COOPAL:
+    ASPATH: "octmnist.json"

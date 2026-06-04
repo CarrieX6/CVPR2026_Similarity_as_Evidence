@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "Kvasir"
+TRAINER:
+  COOPAL:
+    ASPATH: "kvasir.json"

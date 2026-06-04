@@ -1,0 +1,50 @@
+{
+    "glioma tumor": [
+        "In the image, a glioma tumor often appears as an irregularly shaped mass with indistinct borders blending into the surrounding brain tissue.",
+        "The photo shows a lesion with heterogeneous signal intensity, indicating a mixture of different tissue types within the glioma.",
+        "A key feature in the image is a ring-like enhancement pattern after the administration of contrast agent, often seen in high-grade gliomas.",
+        "This image displays significant swelling, known as vasogenic edema, in the brain tissue surrounding the glioma tumor.",
+        "A glioma tumor is visible as a mass causing a 'mass effect', meaning it displaces or deforms adjacent normal brain structures.",
+        "The tumor in the photo has infiltrated the white matter tracts, which is a characteristic feature of a glioma.",
+        "This is an image of an intra-axial lesion, meaning the glioma tumor originates from within the brain parenchyma itself.",
+        "The photo depicts a mass with central necrosis or cystic components, appearing as a dark area within the tumor.",
+        "On this scan, the glioma appears as a poorly-defined, infiltrative lesion within the cerebral hemisphere.",
+        "The image shows a brain with a glioma, characterized by its invasive nature and lack of a clear capsule."
+    ],
+    "meningioma tumor": [
+        "The image displays a meningioma as a well-defined, distinctly bordered mass located outside the brain tissue (extra-axial).",
+        "A characteristic feature in the photo is the tumor's broad attachment to the dura, the outer lining of the brain.",
+        "This is a photo of a meningioma showing intense and uniform enhancement after contrast injection, appearing as a brightly lit mass.",
+        "In the image, a 'dural tail sign' is visible, which looks like a tail of enhancement extending from the tumor along the dura.",
+        "The photo shows a meningioma causing compression and displacement of the adjacent brain without invading it.",
+        "A meningioma often appears as a rounded or lobulated mass located on the surface of the brain.",
+        "The tumor in this image is isointense to gray matter on T1-weighted images, meaning it has a similar shade before contrast.",
+        "This image shows a meningioma that may contain calcifications, which appear as very dark or bright spots depending on the imaging sequence.",
+        "The photo depicts a smoothly marginated mass consistent with a meningioma, pressing on the cerebral cortex.",
+        "Visible in the scan is a dural-based mass, a classic presentation of a meningioma tumor."
+    ],
+    "pituitary tumor": [
+        "The image shows a well-defined, rounded mass located within the sella turcica, the bony cavity at the base of the skull where the pituitary gland sits.",
+        "This photo depicts an expansion of the sella turcica caused by a pituitary tumor.",
+        "A pituitary adenoma is visible in the scan, often appearing as a lesion with a signal intensity different from the normal pituitary gland.",
+        "In the image, the pituitary tumor can be seen extending upwards (suprasellar extension), potentially compressing the optic chiasm.",
+        "This is a photo of a pituitary macroadenoma, defined as a tumor larger than 10mm in diameter, filling the pituitary fossa.",
+        "The image shows a pituitary tumor that enhances less avidly and more slowly than the surrounding normal pituitary gland after contrast.",
+        "On this sagittal view, a mass is clearly visible within the pituitary fossa, characteristic of a pituitary tumor.",
+        "The photo shows a lesion at the base of the brain consistent with a pituitary tumor, which can sometimes be cystic or hemorrhagic.",
+        "This scan reveals a pituitary tumor causing thinning and remodeling of the bone of the sella turcica.",
+        "The image displays a distinct mass in the sellar region, which is the typical location for a pituitary tumor."
+    ],
+    "normal brain": [
+        "The image displays a normal brain with clear differentiation between the gray matter on the outside and the white matter on the inside.",
+        "In this photo, the brain structures are symmetrical on both the left and right sides, with no evidence of displacement.",
+        "A normal brain scan shows the ventricles, the fluid-filled spaces, as well-defined structures of normal size and shape.",
+        "The image shows no signs of abnormal masses, lesions, or growths within the brain tissue.",
+        "This is a photo of a healthy brain where there is no abnormal enhancement after the administration of a contrast agent.",
+        "In the image, the sulci and gyri, which are the grooves and folds of the brain cortex, appear normal and are not effaced.",
+        "The scan shows a brain with no evidence of swelling (edema), hemorrhage, or fluid collections.",
+        "This photo displays normal brain anatomy with all major structures, like the cerebrum, cerebellum, and brainstem, appearing unremarkable.",
+        "A normal brain image is characterized by the absence of any pathological findings such as tumors, infarcts, or inflammation.",
+        "The image shows a brain with normal signal intensity throughout, without any bright or dark spots that would suggest pathology."
+    ]
+}

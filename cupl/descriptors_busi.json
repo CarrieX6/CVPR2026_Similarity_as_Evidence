@@ -1,0 +1,38 @@
+{
+    "benign tumor": [
+        "In the image, a benign tumor typically appears as a well-defined mass with smooth, regular borders.",
+        "The photo shows a clearly circumscribed lesion that displaces adjacent structures rather than invading them.",
+        "A benign mass often has a homogeneous appearance, with a uniform internal texture and signal intensity.",
+        "This scan displays a lesion with a distinct capsule or boundary that separates it from surrounding normal tissue.",
+        "The growth pattern visible in the photo is expansive, meaning it pushes nearby tissues aside as it grows slowly.",
+        "This is an image of a mass that is typically rounded or oval in shape, consistent with a benign growth.",
+        "On post-contrast scans, a benign tumor often shows mild to moderate, uniform enhancement.",
+        "The photo reveals a lack of significant surrounding swelling (edema) or inflammatory changes.",
+        "The lesion shown in the image appears solitary and does not show signs of spreading to other areas.",
+        "A key feature of this mass is its regular and predictable shape, lacking aggressive characteristics."
+    ],
+    "malignant tumor": [
+        "The image displays a malignant tumor characterized by its irregular shape and indistinct, poorly defined borders.",
+        "A key feature in the photo is the infiltrative nature of the mass, which invades and destroys adjacent normal tissue.",
+        "This lesion shows a heterogeneous internal structure, with mixed signals indicating areas of necrosis or hemorrhage.",
+        "In the scan, the margins of the mass are spiculated or fuzzy, blending into the surrounding tissue.",
+        "A malignant tumor is visible, causing significant swelling (edema) in the tissues around it.",
+        "After contrast administration, the photo shows intense, irregular, or ring-like enhancement, indicating abnormal blood vessel growth.",
+        "The image reveals an aggressive growth pattern that does not respect normal anatomical boundaries.",
+        "This is a photo of a mass with a chaotic and disorganized internal appearance.",
+        "The scan shows evidence of invasion into nearby blood vessels or lymphatic channels, a sign of malignancy.",
+        "Secondary signs such as smaller satellite lesions or spread to regional lymph nodes may be visible in the image."
+    ],
+    "normal scan": [
+        "The image displays normal tissue architecture, with no evidence of abnormal masses, growths, or lesions.",
+        "In this photo, the organs and structures shown are of a normal size, shape, and position.",
+        "A normal scan is characterized by the absence of any focal distortions or structural abnormalities.",
+        "The scan reveals homogeneous and expected tissue texture and signal intensity throughout the imaged area.",
+        "There are no signs of unusual fluid collections, inflammation, or swelling in this image.",
+        "This is a photo of a normal scan where all anatomical structures appear symmetrical and well-defined.",
+        "No pathological or abnormal enhancement is visible after the administration of a contrast agent.",
+        "The image shows clear and distinct boundaries between different types of tissues and organs.",
+        "The overall appearance in the photo is unremarkable and consistent with a healthy, normal study.",
+        "This scan is free of any suspicious findings that would suggest the presence of a disease process."
+    ]
+}

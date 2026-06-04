@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "KneeXray"
+TRAINER:
+  COOPAL:
+    ASPATH: "kneexray.json"
