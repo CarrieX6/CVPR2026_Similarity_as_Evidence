@@ -1,4 +1,4 @@
-# SaE — Similarity-as-Evidence (CVPR 2026)
+# SaE — Similarity-as-Evidence (CVPR 2026 Highlight)
 
 Official **conference-version** release of our CVPR 2026 paper:
 
