@@ -276,7 +276,14 @@ class TrainingLogger:
 
         if metric == "macro_f1":
             metric_value = float(macro_f1) if macro_f1 is not None else float("-inf")
-        elif metric in ("balanced_accuracy", "balanced_acc", "bal_acc"):
+        elif metric in (
+            "balanced_accuracy",
+            "balanced_acc",
+            "bal_acc",
+            "macro_acc",
+            "macro_accuracy",
+            "macro accuracy",
+        ):
             metric_value = float(bal_acc)
         else:
             metric_value = float(overall_acc)

@@ -11,7 +11,7 @@ TRAINER:
     ACQ_SCORE_MODE: "legacy_wv_wd"
     BALANCED_QUERY: true
     BALANCED_QUERY_PSEUDO: true
-    BEST_ROUND_METRIC: "macro_f1"
+    BEST_ROUND_METRIC: "balanced_accuracy"
     MEH_VERSION: "v2"
     MEH_LOSS_VERSION: "meh_loss_v2_alternative"
     SAE_CA:
