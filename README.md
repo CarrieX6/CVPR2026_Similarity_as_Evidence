@@ -11,19 +11,6 @@ This repository implements the core **SaE active-learning pipeline**:
 - round-scheduled acquisition score **`wv · vac + wd · dis`** (`ACQ_SCORE_MODE: legacy_wv_wd`);
 - **class-balanced acquisition** via pseudo-label bucketing (`METHOD: sae_ca`).
 
-## What is `sae_ca`?
-
-`METHOD: "sae_ca"` means **SaE + Class-Aware balanced query**.
-
-| Component | Conference SaE (`sae_ca`) | TPAMI extension (not in this repo) |
-|-----------|---------------------------|-------------------------------------|
-| Evidence head | `VLM_EH_V2` → scalar λ per sample | `CEAH_V2` → per-class α |
-| Uncertainty | scalar vacuity / dissonance | class-vacuity + gated CEAH |
-| Acquisition score | `wv·vac + wd·dis` | LT-SaE buckets / LA / quotas |
-| Balanced selection | pseudo-label class buckets | same + tail modules |
-
-So **`sae_ca` is vector-level (sample-wise) total evidence estimation**, combined with **class-aware balanced sampling** in the query step.
-
 ## Repository Layout
 
 ```text
