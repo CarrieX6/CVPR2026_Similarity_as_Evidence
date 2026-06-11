@@ -24,13 +24,3 @@ TRAIN:
 MODEL:
   BACKBONE:
     NAME: "ViT-B/16"
-
-# TPAMI 扩展默认项（可被命令行 TRAINER.COOPAL.* 覆盖；节点由 train.extend_cfg 预创建）
-TRAINER:
-  COOPAL:
-    SAE_CA:
-      Q_FIXED_PI: false
-      USE_KCENTER: false
-      TOPM_RATIO: 10.0
-    EGSF:
-      NAIVE_FT: false
