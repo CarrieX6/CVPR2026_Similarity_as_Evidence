@@ -17,5 +17,3 @@ TRAINER:
     SAE_CA:
       ENABLE: true
       USE_KCENTER: false
-    EGSF:
-      ENABLE: false

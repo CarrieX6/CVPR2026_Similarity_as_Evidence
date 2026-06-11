@@ -119,11 +119,6 @@ def extend_cfg(cfg):
     cfg.TRAINER.COOPAL.AL_RESUME_ENABLE = True
     cfg.TRAINER.COOPAL.AL_CHECKPOINT_KEEP_LAST = 2
     cfg.TRAINER.COOPAL.AL_CHECKPOINT_INTERVAL = 1
-    cfg.TRAINER.COOPAL.OUTPUT_ADAPTER = ""
-    cfg.TRAINER.COOPAL.ACQ_SCATTER_PLOT = False
-    cfg.TRAINER.COOPAL.EXPERIMENT_REGISTRY = ""
-    cfg.TRAINER.COOPAL.TSNE_VIS = False
-    cfg.TRAINER.COOPAL.BALANCED_INCLASS_DIVERSITY = False
     cfg.TRAINER.COOPAL.SAE_CA = CN()
     cfg.TRAINER.COOPAL.SAE_CA.ENABLE = False
     cfg.TRAINER.COOPAL.SAE_CA.USE_KCENTER = False
@@ -131,13 +126,6 @@ def extend_cfg(cfg):
     cfg.TRAINER.COOPAL.SAE_CA.MODE = "standard"
     cfg.TRAINER.COOPAL.SAE_CA.Q_FIXED_PI = False
     cfg.TRAINER.COOPAL.SAE_CA.TOPM_RATIO = 10.0
-    cfg.TRAINER.COOPAL.EGSF = CN()
-    cfg.TRAINER.COOPAL.EGSF.ENABLE = False
-    cfg.TRAINER.COOPAL.EGSF.LAST_L = 2
-    cfg.TRAINER.COOPAL.EGSF.ANCHOR_W = 0.1
-    cfg.TRAINER.COOPAL.EGSF.BACKBONE_LR_MULT = 0.1
-    cfg.TRAINER.COOPAL.EGSF.TAU_VAC = 0.3
-    cfg.TRAINER.COOPAL.EGSF.NAIVE_FT = False
     cfg.DATASET.SUBSAMPLE_CLASSES = "all"  # all, base or new
     cfg.DATASET.CAMELYON_HF_CAP = 0
     cfg.DATASET.CAMELYON_HF_PROGRESS_EVERY = 2000
@@ -164,7 +152,7 @@ def setup_cfg(args):
     if args.config_file:
         cfg.merge_from_file(args.config_file)
 
-    # 3. From an optional method config file (e.g. configs/methods/ra_sae_full.yaml)
+    # 3. From an optional SaE method config file (e.g. configs/methods/sae.yaml)
     if getattr(args, "method_config_file", ""):
         cfg.merge_from_file(args.method_config_file)
 
@@ -234,7 +222,7 @@ if __name__ == "__main__":
         "--method-config-file",
         type=str,
         default="",
-        help="path to method-specific config file (e.g. RA-SaE)",
+        help="path to SaE method config file (e.g. configs/methods/sae.yaml)",
     )
     parser.add_argument(
         "--dataset-config-file",

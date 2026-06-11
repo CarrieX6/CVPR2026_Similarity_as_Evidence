@@ -54,9 +54,7 @@ from ..checkpoint_prune import (
     _sync_checkpoint_pointer,
 )
 from dassl.evaluation.evaluator_per_class import ClassificationPerClass
-from ..utils.tsne_visualizer import TSNEVisualizer
 
- 
 from collections import defaultdict
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -360,16 +358,7 @@ class CustomCLIP(nn.Module):
         else:
             # 如果以上都不匹配，抛出错误
             raise AttributeError("无法从 image_encoder 中自动确定特征维度 fdim。")
-        print(f"成功识别图像编码器，特征维度 fdim 设置为: {self._fdim}")   
-
-        # Optional output-end adapter to fine-tune without unfreezing CLIP
-        self.use_output_adapter = getattr(cfg.TRAINER.COOPAL, "OUTPUT_ADAPTER", False)
-        self.output_adapter = None
-        if self.use_output_adapter:
-            self.output_adapter = nn.Linear(self._fdim, self._fdim, bias=False)
-            with torch.no_grad():
-                self.output_adapter.weight.copy_(torch.eye(self._fdim))
-
+        print(f"成功识别图像编码器，特征维度 fdim 设置为: {self._fdim}")
 
     @property
     def fdim(self):
@@ -405,9 +394,6 @@ class CustomCLIP(nn.Module):
 
     def forward(self, image, get_feature=False, return_branch_logits=False):
         z = self.image_encoder(image.type(self.dtype))
-        if self.use_output_adapter and self.output_adapter is not None:
-            z = z + self.output_adapter(z)
-
         text_features = self._encode_text_features_norm()
         logit_scale = self.logit_scale.exp()
         image_features = z / z.norm(dim=-1, keepdim=True).clamp(min=1e-6)
@@ -683,8 +669,6 @@ class BiomedCLIP(TrainerX):
 
         # 4. 使用 BiomedCoOp 的方式冻结参数
         names_to_update = ["prompt_learner.ctx"]
-        if getattr(cfg.TRAINER.COOPAL, "OUTPUT_ADAPTER", False):
-            names_to_update.append("output_adapter.weight")
         for name, param in self.model.named_parameters():
             param.requires_grad_(name in names_to_update)
 
@@ -1291,7 +1275,7 @@ class BiomedCLIP(TrainerX):
         """Generic training loops."""
         dataset = build_dataset(self.cfg)
 
-        # ── 实验可复现性：所有 AL/2x2/adapter 运行都保存配置快照 ──
+        # Save config snapshot for reproducibility.
         self._save_config_snapshot()
 
         print(f"dataset length: {len(dataset.train_x)}")
@@ -1341,16 +1325,8 @@ class BiomedCLIP(TrainerX):
         print("\n" + "="*60+"\n")
         print(len(unlabeled_dst),n_query,n_cand)
         print("\n" + "="*60+"\n")
-        pcb_flag = self.cfg.TRAINER.COOPAL.pcb_flag.strip().lower() == "true"  
-        
-        # Initialize t-SNE visualizer if enabled
-        tsne_visualizer = None
-        if self.cfg.TRAINER.COOPAL.TSNE_VIS:
-            print("=" * 50)
-            print("t-SNE Visualization Enabled")
-            print("=" * 50)
-            tsne_visualizer = TSNEVisualizer(output_dir=self.cfg.OUTPUT_DIR)
-        
+        pcb_flag = self.cfg.TRAINER.COOPAL.pcb_flag.strip().lower() == "true"
+
         self._al_resume_active = al_resume._enabled(self.cfg)
         self.before_train()
         if resume_plan is not None and (start_round > 0 or resume_epoch_at_start > 0):
@@ -1397,7 +1373,7 @@ class BiomedCLIP(TrainerX):
                         statistics = torch.zeros(self.num_classes)
                         for elem in dataset._train_x:
                             statistics[elem.label] += 1
-                        pcb = PCB(self.cfg, self.model, unlabeled_dst, idx, self.num_classes, statistics, self.device, tsne_visualizer=tsne_visualizer)
+                        pcb = PCB(self.cfg, self.model, unlabeled_dst, idx, self.num_classes, statistics, self.device)
                         idx = pcb.select(n_query)
 
                 # Filtering       
@@ -1469,78 +1445,8 @@ class BiomedCLIP(TrainerX):
             self._al_save_round_complete(
                 total_n, n_query, self.total_rounds, i, labeled_global_idx, U_index
             )
-            
-            # Generate t-SNE visualization after training (for all rounds including Round 0)
-            if tsne_visualizer is not None and len(dataset._train_x) > 0:
-                print(f"\n[Round {i}] Generating t-SNE visualization after training...")
-                
-                # Extract labeled features
-                labeled_features_list = []
-                labeled_labels_list = []
-                with torch.no_grad():
-                    labeled_loader = build_data_loader(
-                        self.cfg,
-                        data_source=dataset._train_x,
-                        batch_size=self.cfg.DATALOADER.TEST.BATCH_SIZE,
-                        tfm=build_transform(self.cfg, is_train=False),
-                        is_train=False,
-                    )
-                    for batch in labeled_loader:
-                        inputs = batch["img"].to(self.device)
-                        labels = batch["label"]
-                        _, features = self.model(image=inputs, get_feature=True)
-                        labeled_features_list.append(features.cpu())
-                        labeled_labels_list.append(labels)
-                
-                labeled_features = torch.cat(labeled_features_list)
-                labeled_labels = torch.cat(labeled_labels_list)
-                
-                # Extract unlabeled features
-                unlabeled_features_list = []
-                unlabeled_subset = torch.utils.data.Subset(unlabeled_dst, U_index)
-                with torch.no_grad():
-                    unlabeled_loader = build_data_loader(
-                        self.cfg,
-                        data_source=unlabeled_subset,
-                        batch_size=self.cfg.DATALOADER.TEST.BATCH_SIZE,
-                        tfm=build_transform(self.cfg, is_train=False),
-                        is_train=False,
-                    )
-                    for batch in unlabeled_loader:
-                        inputs = batch["img"].to(self.device)
-                        _, features = self.model(image=inputs, get_feature=True)
-                        unlabeled_features_list.append(features.cpu())
-                
-                unlabeled_features = torch.cat(unlabeled_features_list) if unlabeled_features_list else torch.tensor([])
-                
-                if len(unlabeled_features) > 0:
-                    tsne_visualizer.visualize_round(
-                        labeled_features=labeled_features,
-                        unlabeled_features=unlabeled_features,
-                        labeled_labels=labeled_labels,
-                        round_idx=i,
-                        n_labeled=len(dataset._train_x)
-                    )
-                    tsne_visualizer.visualize_round_umap(
-                        labeled_features=labeled_features,
-                        unlabeled_features=unlabeled_features,
-                        labeled_labels=labeled_labels,
-                        round_idx=i,
-                        n_labeled=len(dataset._train_x)
-                    )
-            
-            print("training time for {}-th round: {:.2f} seconds".format(i, time.time() - start))
 
-        # Generate summary visualization after all rounds
-        if tsne_visualizer is not None:
-            print("\n" + "=" * 50)
-            print("Generating summary t-SNE visualization for all rounds...")
-            print("=" * 50)
-            tsne_visualizer.create_summary_visualization()
-            print("\n" + "=" * 50)
-            print("Generating summary UMAP visualization for all rounds...")
-            print("=" * 50)
-            tsne_visualizer.create_summary_visualization_umap()
+            print("training time for {}-th round: {:.2f} seconds".format(i, time.time() - start))
 
         if hasattr(self, 'logger'):
             al_resume.clear_resume_state(self.output_dir)

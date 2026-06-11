@@ -1,7 +1,5 @@
 import os
 import json
-import subprocess
-import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -1294,64 +1292,6 @@ class TrainingLogger:
         print(f"Run summary (JSON) saved to: {path}")
         return path
 
-    def maybe_append_experiment_registry(self):
-        """
-        训练结束后把本次 run 追加到统一台账（CSV + Markdown）。
-
-        默认开启：cfg.TRAINER.COOPAL.EXPERIMENT_REGISTRY.AUTO_APPEND=True
-        可用环境变量关闭：EXPERIMENT_REGISTRY_AUTO_APPEND=0/false/no
-        """
-        try:
-            if self.cfg is None:
-                return
-            if not hasattr(self.cfg, "TRAINER"):
-                return
-            if not hasattr(self.cfg.TRAINER, "COOPAL"):
-                return
-            coop = self.cfg.TRAINER.COOPAL
-            if not hasattr(coop, "EXPERIMENT_REGISTRY"):
-                return
-
-            env_off = os.environ.get("EXPERIMENT_REGISTRY_AUTO_APPEND", "").strip().lower()
-            if env_off in {"0", "false", "no", "off"}:
-                return
-
-            reg = coop.EXPERIMENT_REGISTRY
-            if not bool(getattr(reg, "AUTO_APPEND", False)):
-                return
-
-            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-            tool = os.path.join(project_root, "tools", "log_experiment_run.py")
-            if not os.path.exists(tool):
-                print(f"[WARN] experiment registry tool missing: {tool}")
-                return
-
-            csv_path = str(getattr(reg, "CSV_PATH", "") or "").strip()
-            md_path = str(getattr(reg, "MD_PATH", "") or "").strip()
-            if csv_path and not os.path.isabs(csv_path):
-                csv_path = os.path.join(project_root, csv_path)
-            if md_path and not os.path.isabs(md_path):
-                md_path = os.path.join(project_root, md_path)
-
-            gpu = os.environ.get("CUDA_VISIBLE_DEVICES", "").strip()
-
-            name = str(getattr(reg, "NAME", "") or "").strip()
-            notes = str(getattr(reg, "NOTES", "") or "").strip()
-
-            cmd = [sys.executable, tool, "--run-dir", self.output_dir, "--gpu", gpu]
-            if name:
-                cmd += ["--experiment-name", name]
-            if notes:
-                cmd += ["--notes", notes]
-            if csv_path:
-                cmd += ["--registry-csv", csv_path]
-            if md_path:
-                cmd += ["--registry-md", md_path]
-
-            subprocess.run(cmd, check=False)
-        except Exception as e:
-            print(f"[WARN] failed to append experiment registry: {e}")
-
     def save_calibration_npz(self):
         """导出每轮测试集 softmax 概率与标签，便于离线重算 ECE / Brier / AUROC 等。"""
         if not self.calibration_data:
@@ -1386,8 +1326,7 @@ class TrainingLogger:
         self.save_best_results()
         self.save_calibration_npz()
         self.save_run_summary_json()
-        self.maybe_append_experiment_registry()
-        
+
         # 生成所有图表
         self.plot_losses()
         self.plot_round_accuracy()

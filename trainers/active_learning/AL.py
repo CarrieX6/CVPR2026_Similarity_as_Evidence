@@ -1,4 +1,3 @@
-# Provenance: RA-SaE active-learning base class.
 import torch
 
 class AL(object):

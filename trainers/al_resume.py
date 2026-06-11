@@ -3,10 +3,8 @@ from __future__ import annotations
 
 import json
 import os
-import random
-import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 STATE_NAME = "al_resume_state.json"
 STATE_VERSION = 1
@@ -23,58 +21,31 @@ def _enabled(cfg) -> bool:
         return True
 
 
-def _round0_indices(total_n: int, n_query: int, seed: int) -> List[int]:
-    rng = random.Random(int(seed))
-    pool = list(range(int(total_n)))
-    k = min(int(n_query), len(pool))
-    return sorted(rng.sample(pool, k))
-
-
-def _read_json(path: Path) -> Optional[dict]:
-    if not path.is_file():
+def _infer_from_query_log(output_dir: Path) -> Optional[Tuple[int, List[int]]]:
+    """Infer labeled pool from conference SaE query_rounds.jsonl."""
+    log_path = output_dir / "training_logs" / "query_rounds.jsonl"
+    if not log_path.is_file():
         return None
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
-        return None
-
-
-def _max_adapter_round(training_logs: Path) -> Optional[int]:
-    rounds: List[int] = []
-    for p in training_logs.glob("adapter_round_*.json"):
-        m = re.search(r"adapter_round_(\d+)\.json$", p.name)
-        if m:
-            rounds.append(int(m.group(1)))
-    return max(rounds) if rounds else None
-
-
-def _selected_from_lt_log(log_dir: Path, round_id: int) -> List[int]:
-    for pat in (f"round_{round_id:02d}.json", f"round_{round_id}.json"):
-        data = _read_json(log_dir / pat)
-        if not data:
+    last_rec: Optional[dict] = None
+    max_round = -1
+    for line in log_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
             continue
-        sel = data.get("selected_global_idx")
-        if sel is None:
-            acq = data.get("acq_log") or {}
-            sel = acq.get("selected_global_idx")
-        if sel is not None:
-            return [int(x) for x in sel]
-    return []
-
-
-def _reconstruct_labeled_indices(
-    output_dir: Path,
-    total_n: int,
-    n_query: int,
-    seed: int,
-    completed_round: int,
-) -> List[int]:
-    labeled: Set[int] = set(_round0_indices(total_n, n_query, seed))
-    lt_dir = output_dir / "al_round_logs"
-    for r in range(1, int(completed_round) + 1):
-        for idx in _selected_from_lt_log(lt_dir, r):
-            labeled.add(int(idx))
-    return sorted(labeled)
+        try:
+            rec = json.loads(line)
+        except Exception:
+            continue
+        r = int(rec.get("round", -1))
+        if r >= max_round:
+            max_round = r
+            last_rec = rec
+    if last_rec is None:
+        return None
+    labeled = last_rec.get("labeled_global_idx_after_query")
+    if labeled is None:
+        return None
+    return max_round, [int(x) for x in labeled]
 
 
 def infer_resume_state(
@@ -94,14 +65,12 @@ def infer_resume_state(
     if explicit is not None:
         return explicit
 
-    training_logs = out / "training_logs"
-    completed = _max_adapter_round(training_logs)
-    if completed is None:
+    inferred = _infer_from_query_log(out)
+    if inferred is None:
         return None
-
-    seed = int(getattr(cfg, "SEED", 1))
-    labeled = _reconstruct_labeled_indices(out, total_n, n_query, seed, completed)
+    completed, labeled = inferred
     u_index = [i for i in range(total_n) if i not in set(labeled)]
+    seed = int(getattr(cfg, "SEED", 1))
     return {
         "version": STATE_VERSION,
         "source": "inferred",

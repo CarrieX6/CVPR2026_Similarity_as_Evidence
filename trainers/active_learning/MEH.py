@@ -1,9 +1,7 @@
 """
-Title: MEH — Model Evidence Head + Acquisition Selector
-Provenance: RA-SaE active-learning evidence-head selector.
-Scope:
-  - VLM_EH_V2 + scalar vacuity/dissonance (conference SaE)
-  - MEH_Selector with legacy_wv_wd + balanced class-aware acquisition
+MEH — Model Evidence Head + Acquisition Selector for conference SaE.
+  - VLM_EH_V2 with scalar vacuity/dissonance
+  - MEH_Selector with legacy_wv_wd + balanced class-aware acquisition (sae_ca)
 """
 
 import torch

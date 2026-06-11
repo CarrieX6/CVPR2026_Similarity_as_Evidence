@@ -12,7 +12,6 @@ class PCB(AL):
         self.device = device 
         self.pred = []
         self.statistics = statistics
-        self.tsne_visualizer = kwargs.get('tsne_visualizer', None)
 
     def select(self, n_query, **kwargs):
         

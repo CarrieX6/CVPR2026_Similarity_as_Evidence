@@ -1,4 +1,4 @@
-name: ra-sae
+name: sae
 channels:
   - pytorch
   - nvidia
