@@ -4,8 +4,10 @@ TRAINER:
     PREC: "fp32"
   COOPAL:
     query: 0.04
-    Totalrounds: 6
-    pcb_flag: "true"
+    Totalrounds: 5
+    # sae_ca performs class-balanced acquisition internally. Keeping the
+    # external PCB stage disabled ensures that each round adds only `query`.
+    pcb_flag: "false"
     METHOD: "sae_ca"
     ACQ_NORM_MODE: "batch_minmax"
     ACQ_SCORE_MODE: "legacy_wv_wd"

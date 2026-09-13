@@ -64,11 +64,32 @@ All ten datasets sequentially:
 DATA_ROOT=/path/to/data SEED=1 GPU=0 bash examples/run_sae_ten_datasets.sh
 ```
 
+## Paper-aligned Active-learning Budget
+
+The default configs follow the 20% annotation-budget protocol used in the
+paper:
+
+- 5 acquisition rounds with 4% of the original training pool queried per
+  round;
+- 100 training epochs per round and a training batch size of 32;
+- `METHOD: "sae_ca"` for class-balanced acquisition;
+- `pcb_flag: "false"`, because `sae_ca` performs class balancing internally.
+
+The number queried per round is computed as
+`int(len(training_pool) * 0.04)`. Consequently, datasets whose pool size is not
+divisible by 25 can be slightly below 20% after integer rounding. For example,
+BUSI selects 15 samples per round and 75/389 (19.28%) over five rounds, while
+Kvasir selects 80 per round and 400/2000 (20%). The optimizer and learning-rate
+scheduler are carried across acquisition rounds rather than reset each round.
+
 ## Method Config (`configs/methods/sae.yaml`)
 
 ```yaml
 TRAINER:
   COOPAL:
+    query: 0.04
+    Totalrounds: 5
+    pcb_flag: "false"
     METHOD: "sae_ca"
     ACQ_SCORE_MODE: "legacy_wv_wd"   # wv*vacuity + wd*dissonance
     ACQ_NORM_MODE: "batch_minmax"
